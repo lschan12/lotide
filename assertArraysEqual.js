@@ -7,7 +7,7 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   } else {
     output += `🛑🛑🛑 These two arrays are not equal!`;
   }
-  return output;
+  return console.log(output);
 };
 
 module.exports = assertArraysEqual;
