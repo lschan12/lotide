@@ -1,6 +1,8 @@
 const assertEqual = require("../assertEqual");
 const head = require("../head");
 const tail = require("../tail");
+const eqArrays = require("../eqArrays");
+const assertArraysEqual = require("../assertArraysEqual");
 
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
@@ -20,3 +22,17 @@ const result = tail(["Hello", "Lighthouse", "Labs"]);
 assertEqual(result.length, 2);
 assertEqual(result[0], "Lighthouse");
 assertEqual(result[1], "Labs");
+
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);// => false
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);// => false
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true); // => true
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false); // => false
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false); // => false
+
+assertArraysEqual([1, 2, 3], [3, 2, 1], false); // => false
+assertArraysEqual([1, 2, 3], [1, 2, 3], true); // => true
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"], true); // => true
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3], false); // => false
