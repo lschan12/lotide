@@ -16,15 +16,3 @@ module.exports = findKeyByValue;
 //   }
 // };
 
-// Test Code
-
-// const bestTVShowsByGenre = {
-//   scifi: "The Expanse",
-//   comedy: "Brooklyn Nine-Nine",
-//   drama: "The Wire",
-// };
-
-// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-// assertEqual(altFindKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-// assertEqual(altFindKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
